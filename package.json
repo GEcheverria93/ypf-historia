@@ -1,0 +1,17 @@
+{
+  "name": "ypf-historia",
+  "version": "1.0.0",
+  "description": "Proyecto educativo: 103 años de historia de YPF",
+  "scripts": {
+    "start": "npx live-server . --port=5500",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "YPF",
+    "historia",
+    "linea-de-tiempo",
+    "html"
+  ],
+  "author": "Gabriel Echeverria",
+  "license": "MIT"
+}
