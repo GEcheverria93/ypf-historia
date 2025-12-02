@@ -32,22 +32,39 @@ body {
 
 /* Encabezado */
 .header {
-    background: linear-gradient(180deg, var(--arg-blue) 0%, var(--arg-blue-light) 100%);
+    /* Slightly darken the gradient and keep the light feel */
+    background: linear-gradient(180deg, var(--arg-blue-dark) 0%, var(--arg-blue) 45%, var(--arg-blue-light) 100%);
     color: var(--arg-white);
     padding: 36px 16px;
     text-align: center;
+    position: relative; /* for overlay */
 }
 
 .header-title {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 8px;
+    /* subtle shadow to improve readability on bright backgrounds */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    /* micro text stroke to make white text crisper on very bright areas (optional fallback) */
+    -webkit-text-stroke: 0.28px rgba(0,0,0,0.12);
 }
 
 .header-subtitle {
     font-size: 1rem;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.95);
     font-weight: 400;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.18);
+}
+
+/* Soft dark overlay to improve contrast where the gradient is very light */
+.header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.08), rgba(0,0,0,0.02));
+    pointer-events: none; /* don't block interactions */
+    border-radius: inherit;
 }
 
 /* Sección Introducción */
